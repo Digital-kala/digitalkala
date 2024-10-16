@@ -1,16 +1,21 @@
 {
   "name": "digitalkala",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
+  "homepage": "https://digital-kala.github.io/digitalkala/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "yarn build && gh-pages -d dist"
   },
   "dependencies": {
+    "@lottiefiles/dotlottie-react": "^0.9.1",
+    "@lottiefiles/react-lottie-player": "^3.5.4",
     "gh-pages": "^6.1.1",
+    "lottie-react": "^2.4.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
