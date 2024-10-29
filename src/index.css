@@ -1,15 +1,60 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@layer tailwind-base, primereact, tailwind-utilities;
 
+@layer tailwind-base {
+  @tailwind base;
+}
 
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@layer tailwind-utilities {
+  @tailwind components;
+  @tailwind utilities;
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: "WebsiteFont";
+  src: url('./assets/fonts/Futura-Book-font.ttf')
+}
+
+@font-face {
+  font-family: "WebsiteFontBold";
+  src: url('./assets/fonts/Futura-Heavy-font.ttf')
+}
+
+@font-face {
+  font-family: "WebsiteFontLight";
+  src: url('./assets/fonts/Futura-Light-font.ttf')
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background-color: #F5FBFF !important;
+  min-height: -moz-available; /* WebKit-based browsers will ignore this. */
+  min-height: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
+  font-family: "WebsiteFont", Helvetica, sans-serif;
+  letter-spacing: 0.6px;
+}
+
+.prevent-select {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+#text-2xs {
+  font-size: 0.625rem /* 10px */;
+  line-height: 0.75rem /* 12px */;
 }
