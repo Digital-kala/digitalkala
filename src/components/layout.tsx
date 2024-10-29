@@ -3,7 +3,6 @@ import { NavBar, Footer } from ".";
 
 export function Layout({
   children,
-  className,
   pageTitle,
 }: {
   children: ReactElement[] | ReactElement;
