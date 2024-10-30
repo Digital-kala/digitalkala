@@ -13,7 +13,7 @@ export function Layout({
     <div className="h-screen overflow-y-auto">
       <NavBar pageTitle={pageTitle} />
       <div className="" id="layout">
-        <div className="space-y-8 w-full h-full">{children}</div>
+        <div className="w-full h-full">{children}</div>
       </div>
       <Footer />
     </div>

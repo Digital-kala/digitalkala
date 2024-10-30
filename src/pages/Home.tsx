@@ -1,16 +1,11 @@
 import { Layout } from "../components";
 
-import heroImage from "../assets/image/logo-white.svg";
-
 const hookTitleClass = "font-bold text-5xl font-['WebsiteFontBold']";
 
 export function Home() {
   return (
     <Layout pageTitle="Home">
       <div className="bg-[#0C3457] text-white h-screen flex flex-col justify-center align-middle items-center">
-        <div className="w-[11rem] absolute top-10 left-10 ">
-          <img src={heroImage} alt="hero" />
-        </div>
         <div className="space-y-5 prevent-select">
           <div className={hookTitleClass}>Empowering Through</div>
           <div className="flex flex-row">
