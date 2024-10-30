@@ -10,7 +10,7 @@ export function Home() {
           <div className={hookTitleClass}>Empowering Through</div>
           <div className="flex flex-row">
             <div className={hookTitleClass}>Education</div>
-            <div className="text-base pl-4">
+            <div className="text-base pl-4 slide-up">
               Explore Digital Literacy With Us
             </div>
           </div>
@@ -20,6 +20,10 @@ export function Home() {
             </button>
           </div>
         </div>
+      </div>
+
+      <div className=" h-screen flex flex-col justify-center align-middle items-center">
+        
       </div>
     </Layout>
   );

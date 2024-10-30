@@ -11,17 +11,17 @@
 
 @font-face {
   font-family: "WebsiteFont";
-  src: url('./assets/fonts/Futura-Book-font.ttf')
+  src: url("./assets/fonts/Futura-Book-font.ttf");
 }
 
 @font-face {
   font-family: "WebsiteFontBold";
-  src: url('./assets/fonts/Futura-Heavy-font.ttf')
+  src: url("./assets/fonts/Futura-Heavy-font.ttf");
 }
 
 @font-face {
   font-family: "WebsiteFontLight";
-  src: url('./assets/fonts/Futura-Light-font.ttf')
+  src: url("./assets/fonts/Futura-Light-font.ttf");
 }
 
 html {
@@ -32,7 +32,7 @@ body {
   margin: 0;
   height: 100%;
   overflow: hidden;
-  background-color: #F5FBFF !important;
+  background-color: #f5fbff !important;
   min-height: -moz-available; /* WebKit-based browsers will ignore this. */
   min-height: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
   font-family: "WebsiteFont", Helvetica, sans-serif;
@@ -57,4 +57,27 @@ body {
 #text-2xs {
   font-size: 0.625rem /* 10px */;
   line-height: 0.75rem /* 12px */;
+}
+
+/* lineup class and keyframes */
+.slide-up {
+  animation: 2s anim-lineUp ease-out both;
+}
+
+@keyframes anim-lineUp {
+  0% {
+    opacity: 0;
+    transform: translateY(80%);
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
 }
