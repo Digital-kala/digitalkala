@@ -6,7 +6,7 @@ import { GrInstagram, GrLinkedin } from "react-icons/gr";
 
 import { contentPaddingClass, handleURLClick, sendEmail } from "./utils";
 
-import heroImage from "../assets/image/logo-white.svg";
+import heroImage from "../assets/image/logo-blue.svg";
 
 const iconSize = 20;
 const navigationTextClass = "text-black/50 cursor-pointer hover:text-black";
@@ -24,7 +24,7 @@ function createSocialMediaLink(icon: IconType, size: number, url: string) {
 
 export function Footer() {
   return (
-    <div className="relative pt-[10vh] pb-[6vh] bg-white text-black flex flex-col">
+    <div className="relative pt-[10vh] pb-[6vh] bg-white text-black flex flex-col"  id="contact">
       <div className={contentPaddingClass}>
         <div className="pb-14 website-font-medium text-xl">
           Join us to bridge the{" "}

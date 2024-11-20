@@ -5,7 +5,7 @@ const hookTitleClass = "font-bold text-5xl font-['WebsiteFontBold']";
 export function Home() {
   return (
     <Layout pageTitle="Home">
-      <div className="bg-[#0C3457] text-white h-screen flex flex-col justify-center">
+      <div className="bg-[#0C3457] text-white h-screen flex flex-col justify-center" id="home">
         <div className={contentPaddingClass}>
           <div className="space-y-5 prevent-select">
             <div className={hookTitleClass}>Empowering Through</div>
