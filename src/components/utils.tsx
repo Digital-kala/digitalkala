@@ -1,3 +1,5 @@
+export const contentPaddingClass = "px-[25vh]";
+
 export function handleNavLinkClick(hash: string) {
   window.location.hash = hash;
 }

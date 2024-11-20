@@ -4,9 +4,12 @@ import { IconType } from "react-icons";
 import { TbMail } from "react-icons/tb";
 import { GrInstagram, GrLinkedin } from "react-icons/gr";
 
-import { handleURLClick, sendEmail } from "./utils";
+import { contentPaddingClass, handleURLClick, sendEmail } from "./utils";
 
 import heroImage from "../assets/image/logo-white.svg";
+
+const iconSize = 20;
+const navigationTextClass = "text-black/50 cursor-pointer hover:text-black";
 
 function createSocialMediaLink(icon: IconType, size: number, url: string) {
   return (
@@ -19,56 +22,72 @@ function createSocialMediaLink(icon: IconType, size: number, url: string) {
   );
 }
 
-const iconSize = 20;
-
 export function Footer() {
   return (
-    <div className="relative pt-[10vh] pb-[6vh] bg-[#0C3457] text-white">
-      <div className="grid grid-cols-7 px-[25vh]">
-        <div className="w-[8rem] col-span-1">
-          <img src={heroImage} alt="hero" />
+    <div className="relative pt-[10vh] pb-[6vh] bg-white text-black flex flex-col">
+      <div className={contentPaddingClass}>
+        <div className="pb-14 website-font-medium text-xl">
+          Join us to bridge the{" "}
+          <span className="text-[#FFC632]">digital gap.</span>
         </div>
 
-        <div className="col-span-2 pl-6">
-          <div
-            onClick={sendEmail}
-            className="flex flex-row space-x-2 items-center align-middle cursor-pointer text-white/85"
-          >
-            <TbMail size={iconSize} />
-            <span className="text-xs">digitalkala.nepal@gmail.com</span>
+        <div className="grid grid-cols-8">
+          <div className="w-[8rem] col-span-3">
+            <img src={heroImage} alt="hero" />
+          </div>
+
+          <div className="col-span-2 space-y-2 text-xs">
+            <p className="font-bold">Our Projects</p>
+            <p
+              className={navigationTextClass}
+              onClick={() =>
+                handleURLClick("https://www.nepalesescholarshiphub.com/")
+              }
+            >
+              Nepalese Scholarship Hub
+            </p>
+          </div>
+
+          <div className="col-span-2 space-y-2 text-xs">
+            <p className="font-bold">Contact Us</p>
+            <div
+              onClick={sendEmail}
+              className={
+                "flex flex-row space-x-2 items-center align-middle " +
+                navigationTextClass
+              }
+            >
+              <TbMail size={iconSize} />
+              <span className="text-xs">digitalkala.nepal@gmail.com</span>
+            </div>
+          </div>
+
+          <div className="col-span-1 space-y-2 items-end flex flex-col">
+            <p className="font-bold text-xs">Connect with us</p>
+            <div className="flex flex-row space-x-3">
+              {createSocialMediaLink(
+                GrInstagram,
+                iconSize,
+                "https://www.instagram.com/digitalkala.nepal/"
+              )}
+              {createSocialMediaLink(
+                GrLinkedin,
+                iconSize,
+                "https://www.linkedin.com/company/digitalkala/"
+              )}
+            </div>
           </div>
         </div>
+      </div>
 
-        <div className="col-span-2 text-xs space-y-2">
-          <p>Our Projects</p>
-          <p
-            className="text-white/50 cursor-pointer hover:text-white"
-            onClick={() =>
-              handleURLClick("https://www.nepalesescholarshiphub.com/")
-            }
-          >
-            Nepalese Scholarship Hub
-          </p>
-        </div>
+      <div
+        className={contentPaddingClass + " pt-10 text-xs flex justify-between"}
+      >
+        <div className={navigationTextClass}>Privacy Policy</div>
 
-        <div className="items-end flex flex-col space-y-6 col-span-2">
-          <div className="flex flex-row space-x-3">
-            {createSocialMediaLink(
-              GrInstagram,
-              iconSize,
-              "https://www.instagram.com/digitalkala.nepal/"
-            )}
-            {createSocialMediaLink(
-              GrLinkedin,
-              iconSize,
-              "https://www.linkedin.com/company/digitalkala/"
-            )}
-          </div>
-
-          <div className="text-white/80 text-xs">
-            &copy; {new Date().getFullYear()}. All Rights Reserved by Digital
-            Kala.
-          </div>
+        <div className="text-black">
+          &copy; {new Date().getFullYear()}. All Rights Reserved by Digital
+          Kala.
         </div>
       </div>
     </div>

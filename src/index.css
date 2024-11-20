@@ -24,6 +24,15 @@
   src: url("./assets/fonts/Futura-Light-font.ttf");
 }
 
+@font-face{
+  font-family: "WebsiteFontMedium";
+  src: url("./assets/fonts/futura-medium-bt.ttf");
+}
+
+.website-font-medium {
+  font-family: "WebsiteFontMedium";
+}
+
 html {
   scroll-behavior: smooth;
 }
