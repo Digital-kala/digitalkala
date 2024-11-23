@@ -5,7 +5,7 @@ import heroImage from "../assets/image/logo-white.svg";
 export function NavBar({ pageTitle }: { pageTitle?: string }) {
   return (
     <div
-      className="bg-[#0C3457] w-full text-white py-8 z-10 fixed top-0"
+      className="bg-[#0C3457] w-full text-white py-6 z-10 fixed top-0"
       id={pageTitle}
     >
       <div className={contentPaddingClass}>
@@ -17,6 +17,9 @@ export function NavBar({ pageTitle }: { pageTitle?: string }) {
           <div className="flex flex-row ">
             <NavSection title={"Home"} scrollToID={"home"} />
             <NavSection title={"Contact"} scrollToID={"contact"} />
+            <button className="bg-[#25608F] px-8 py-3 rounded-xl text-sm">
+                Help us
+              </button>
           </div>
         </div>
       </div>

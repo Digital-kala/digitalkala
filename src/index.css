@@ -48,6 +48,11 @@ body {
   letter-spacing: 0.6px;
 }
 
+button:hover {
+  transform: scale(1.06);
+  transition: transform 0.3s ease-in-out;
+}
+
 .prevent-select {
   -webkit-touch-callout: none;
   /* iOS Safari */
