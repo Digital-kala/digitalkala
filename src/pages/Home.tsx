@@ -1,29 +1,9 @@
 import { contentPaddingClass, Layout } from "../components";
+import { motoCard, partnerOrganizationIcon, teamProfileCard } from "./Utils";
 
 const hookTitleClass = "font-bold text-5xl font-['WebsiteFontBold']";
 const sectionTitleClass =
-  "font-bold text-2xl font-['WebsiteFontBold'] tracking-wider text-center";
-
-function partnerOrganizationIcon(url: string, label: string) {
-  return (
-    <div className="space-y-4 col-span-1 ">
-      <img
-        src={url}
-        className="h-[15vh] bg-white rounded-xl py-2 object-contain w-full"
-      />
-      <center className="text-xs">{label} </center>
-    </div>
-  );
-}
-
-function motoCard(title: string, description: string) {
-  return (
-    <div className="col-span-1 bg-white/20 rounded-xl p-8 space-y-4">
-      <div className="text-2xl font-bold">{title}</div>
-      <div className="text-sm">{description}</div>
-    </div>
-  );
-}
+  "font-bold text-3xl font-['WebsiteFontBold'] tracking-wider text-center";
 
 export function Home() {
   return (
@@ -99,6 +79,54 @@ export function Home() {
               "Moto",
               "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
             )}
+          </div>
+        </div>
+      </div>
+
+      <div
+        className="bg-white py-[20vh] flex flex-col justify-center"
+        id="team"
+      >
+        <div className={contentPaddingClass + " space-y-20"}>
+          <div className={sectionTitleClass + " text-[#0C3457]"}>Our Team</div>
+          <div className="flex overflow-x-auto snap-x">
+            <div className="grid grid-flow-col auto-cols-max gap-10">
+              {teamProfileCard(
+                "Labbi Karmacharya",
+                "Founder",
+                "https://cdn.prod.website-files.com/637b58dfc65fb87428edb28a/66e9a55ccba12f51ca7b7a57_labbi-horiz.jpg"
+              )}
+              {teamProfileCard(
+                "Aastha Acharya",
+                "Co-Founder",
+                "https://meformyself.com/wp-content/uploads/2021/01/Screen-Shot-2021-01-12-at-22.38.06.png"
+              )}
+              {teamProfileCard(
+                "Dipa Rai",
+                "Co-Founder",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmN-kYNJO8f43--Mcpt8rXfhzZrvxS5VQ39w&s"
+              )}
+              {teamProfileCard(
+                "Pooja Shrestha",
+                "Role",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeDatAId3Il0jFCVAEF_Q0uzcut1QukbJBGA&s"
+              )}
+              {teamProfileCard(
+                "Aayusha Shrestha",
+                "Role",
+                "https://cdn.prod.website-files.com/637b58dfc65fb87428edb28a/64e3dc675f048a1377508e37_aayusha1.png"
+              )}
+              {teamProfileCard(
+                "Animesh Singh Basnet",
+                "Role",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZSiMILQ7MCJGp7KhrLvQtxFJsFpp7IgAstw&s"
+              )}
+              {teamProfileCard(
+                "Unika Karmacharya",
+                "Role",
+                "https://women-lead.org/wp-content/uploads/2023/10/IMG_1590.jpg"
+              )}
+            </div>
           </div>
         </div>
       </div>

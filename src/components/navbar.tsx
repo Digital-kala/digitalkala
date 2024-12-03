@@ -16,6 +16,7 @@ export function NavBar({ pageTitle }: { pageTitle?: string }) {
 
           <div className="flex flex-row ">
             <NavSection title={"Home"} scrollToID={"home"} />
+            <NavSection title={"Team"} scrollToID={"team"} />
             <NavSection title={"Contact"} scrollToID={"contact"} />
             <button className="bg-[#25608F] px-8 py-3 rounded-xl text-sm">
                 Help us
