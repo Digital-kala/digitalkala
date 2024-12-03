@@ -132,7 +132,7 @@ export function Home() {
           <div className="grid grid-cols-4 gap-10">
             {teamProfileCard(
               "Labbi Karmacharya",
-              "Founder",
+              "Co-Founder",
               "https://cdn.prod.website-files.com/637b58dfc65fb87428edb28a/66e9a55ccba12f51ca7b7a57_labbi-horiz.jpg"
             )}
             {teamProfileCard(
@@ -162,7 +162,7 @@ export function Home() {
             )}
             {teamProfileCard(
               "Unika Karmacharya",
-              "Role",
+              "Intern",
               "https://women-lead.org/wp-content/uploads/2023/10/IMG_1590.jpg"
             )}
           </div>
