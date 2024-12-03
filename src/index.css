@@ -48,9 +48,13 @@ body {
   letter-spacing: 0.6px;
 }
 
-button:hover {
+
+.hoverFloat {
+  transition: transform 0.2s ease-out;
+}
+
+.hoverFloat:hover{
   transform: scale(1.06);
-  transition: transform 0.3s ease-in-out;
 }
 
 .prevent-select {

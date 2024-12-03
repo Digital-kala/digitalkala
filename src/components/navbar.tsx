@@ -16,9 +16,10 @@ export function NavBar({ pageTitle }: { pageTitle?: string }) {
 
           <div className="flex flex-row ">
             <NavSection title={"Home"} scrollToID={"home"} />
+            <NavSection title={"Project"} scrollToID={"project"} />
             <NavSection title={"Team"} scrollToID={"team"} />
             <NavSection title={"Contact"} scrollToID={"contact"} />
-            <button className="bg-[#25608F] px-8 py-3 rounded-xl text-sm">
+            <button className="bg-[#25608F] px-8 py-3 rounded-xl text-sm hoverFloat">
                 Help us
               </button>
           </div>
@@ -43,7 +44,7 @@ function NavSection({
   };
 
   return (
-    <div className="flex items-center">
+    <div className="flex items-center ">
       <div
         onClick={handleScrollToClick}
         className="gap-1.5 mr-8 flex cursor-pointer p-2 text-sm text-white hover:text-[#FFC632]"
