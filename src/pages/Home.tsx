@@ -6,6 +6,8 @@ import {
   teamProfileCard,
 } from "./Utils";
 
+import { MdOutlineHandshake } from "react-icons/md";
+
 const hookTitleClass = "font-bold text-5xl font-['WebsiteFontBold']";
 const sectionTitleClass =
   "font-bold text-3xl font-['WebsiteFontBold'] tracking-wider text-center";
@@ -70,19 +72,23 @@ export function Home() {
           <div className="grid grid-cols-4 gap-10 text-white/70">
             {motoCard(
               "Moto",
-              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+              MdOutlineHandshake
             )}
             {motoCard(
               "Moto",
-              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+              MdOutlineHandshake
             )}
             {motoCard(
               "Moto",
-              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+              MdOutlineHandshake
             )}
             {motoCard(
               "Moto",
-              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+              MdOutlineHandshake
             )}
           </div>
         </div>
@@ -133,37 +139,44 @@ export function Home() {
             {teamProfileCard(
               "Labbi Karmacharya",
               "Co-Founder",
-              "https://cdn.prod.website-files.com/637b58dfc65fb87428edb28a/66e9a55ccba12f51ca7b7a57_labbi-horiz.jpg"
+              "https://cdn.prod.website-files.com/637b58dfc65fb87428edb28a/66e9a55ccba12f51ca7b7a57_labbi-horiz.jpg",
+              "https://np.linkedin.com/in/labbi-karmacharya"
             )}
             {teamProfileCard(
               "Aastha Acharya",
               "Co-Founder",
-              "https://meformyself.com/wp-content/uploads/2021/01/Screen-Shot-2021-01-12-at-22.38.06.png"
+              "https://meformyself.com/wp-content/uploads/2021/01/Screen-Shot-2021-01-12-at-22.38.06.png",
+              "https://www.linkedin.com/in/aasthaacharya2000/"
             )}
             {teamProfileCard(
               "Dipa Rai",
               "Co-Founder",
-              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmN-kYNJO8f43--Mcpt8rXfhzZrvxS5VQ39w&s"
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmN-kYNJO8f43--Mcpt8rXfhzZrvxS5VQ39w&s",
+              "https://www.linkedin.com/in/yakhha-dipa-rai-49aa79275/"
             )}
             {teamProfileCard(
               "Pooja Shrestha",
               "Role",
-              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeDatAId3Il0jFCVAEF_Q0uzcut1QukbJBGA&s"
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeDatAId3Il0jFCVAEF_Q0uzcut1QukbJBGA&s",
+              "https://www.linkedin.com/in/pooja-shrestha-818a231b4/"
             )}
             {teamProfileCard(
               "Aayusha Shrestha",
               "Role",
-              "https://cdn.prod.website-files.com/637b58dfc65fb87428edb28a/64e3dc675f048a1377508e37_aayusha1.png"
+              "https://cdn.prod.website-files.com/637b58dfc65fb87428edb28a/64e3dc675f048a1377508e37_aayusha1.png",
+              "https://www.linkedin.com/in/shresthaaayusha/"
             )}
             {teamProfileCard(
               "Animesh Singh Basnet",
               "Role",
-              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZSiMILQ7MCJGp7KhrLvQtxFJsFpp7IgAstw&s"
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZSiMILQ7MCJGp7KhrLvQtxFJsFpp7IgAstw&s",
+              "https://www.linkedin.com/in/animeshbasnet/"
             )}
             {teamProfileCard(
               "Unika Karmacharya",
               "Intern",
-              "https://women-lead.org/wp-content/uploads/2023/10/IMG_1590.jpg"
+              "https://women-lead.org/wp-content/uploads/2023/10/IMG_1590.jpg",
+              "https://www.linkedin.com/in/unika-karmacharya-15455a294/"
             )}
           </div>
         </div>
