@@ -37,19 +37,19 @@ export function Footer() {
           </div>
 
           <div className="col-span-2 space-y-2 text-xs">
-            <p className="font-bold">Our Projects</p>
-            <p
+            <div className="font-bold">Our Projects</div>
+            <div
               className={navigationTextClass}
               onClick={() =>
                 handleURLClick("https://www.nepalesescholarshiphub.com/")
               }
             >
               Nepalese Scholarship Hub
-            </p>
+            </div>
           </div>
 
           <div className="col-span-2 space-y-2 text-xs">
-            <p className="font-bold">Contact Us</p>
+            <div className="font-bold">Contact Us</div>
             <div
               onClick={sendEmail}
               className={
@@ -58,12 +58,12 @@ export function Footer() {
               }
             >
               <TbMail size={iconSize} />
-              <span className="text-xs">digitalkala.nepal@gmail.com</span>
+              <div className="text-xs">digitalkala.nepal@gmail.com</div>
             </div>
           </div>
 
           <div className="col-span-1 space-y-2 items-end flex flex-col">
-            <p className="font-bold text-xs">Connect with us</p>
+            <div className="font-bold text-xs ">Connect with us</div>
             <div className="flex flex-row space-x-3">
               {createSocialMediaLink(
                 GrInstagram,

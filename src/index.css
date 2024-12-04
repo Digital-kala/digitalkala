@@ -48,6 +48,11 @@ body {
   letter-spacing: 0.6px;
 }
 
+p{
+  font-family: "Inter";
+  line-height: 1.25rem;
+}
+
 
 .hoverFloat {
   transition: transform 0.2s ease-out;
