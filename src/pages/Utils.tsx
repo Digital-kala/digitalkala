@@ -1,26 +1,27 @@
 import React from "react";
-import { IconType } from "react-icons";
+
+import { v4 as uuidv4 } from "uuid";
+
+import { PartnerProps, ProfileProps, ProgramProps } from "./props";
 import { handleURLClick } from "../components";
 
+import { IconType } from "react-icons";
 import { IoLogoLinkedin } from "react-icons/io5";
 
-export function partnerOrganizationIcon(
-  index: number,
-  name: string,
-  logoURL: string,
-  websiteURL?: string
-) {
+export function partnerOrganizationIcon(partner: PartnerProps) {
   return (
     <div
-      key={`partner-${index}`}
-      className={"space-y-4 col-span-1 " + (websiteURL && " cursor-pointer")}
-      onClick={() => websiteURL && handleURLClick(websiteURL)}
+      key={`partner-${uuidv4()}`}
+      className={
+        "space-y-4 col-span-1 " + (partner.websiteUrl && " cursor-pointer")
+      }
+      onClick={() => partner.websiteUrl && handleURLClick(partner.websiteUrl)}
     >
       <img
-        src={logoURL}
+        src={partner.logo}
         className="h-[15vh] rounded-xl py-2 object-contain w-full"
       />
-      <center className="text-xs leading-5">{name} </center>
+      <center className="text-xs leading-5 h-[4vh]">{partner.name} </center>
     </div>
   );
 }
@@ -28,73 +29,62 @@ export function partnerOrganizationIcon(
 export function motoCard(title: string, description: string, icon: IconType) {
   return (
     <div className="col-span-1 bg-white/20 rounded-xl p-8 space-y-5 shadow shadow-white/30 drop-shadow-lg relative">
-      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+      <div className="text-xl font-bold text-center">{title}</div>
+      <p className="text-sm text-justify pb-6">{description}</p>
+      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2">
         <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center ">
           {React.createElement(icon, { className: "text-[#0C3457] w-7 h-7" })}
         </div>
       </div>
-      <div className="text-xl font-bold text-center">{title}</div>
-      <p className="text-sm text-justify">{description}</p>
     </div>
   );
 }
 
-export function projectProfileCard(
-  idx: number,
-  name: string,
-  description: string,
-  image?: string
-) {
+export function programProfileCard(program: ProgramProps) {
   return (
     <div
-      key={`project-${idx}`}
-      className="snap-start col-span-1 bg-white/20 rounded-xl p-4 space-y-4 text-white shadow shadow-white/30 drop-shadow-lg w-96 mb-0.5"
+      key={`program-${uuidv4()}`}
+      className="snap-start col-span-1 bg-white/20 rounded-xl space-y-4 text-white shadow shadow-white/30 drop-shadow-lg w-96 mb-0.5"
     >
       <img
         src={
-          image ||
+          program?.image ||
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyNItRCgZBEtOjEeVdZA7HYM1xb0SxdlxwLw&s"
         }
         alt="hero"
-        className="h-[30vh] w-full bg-white rounded-lg prevent-select object-cover"
+        className="h-[30vh] w-full rounded-t-xl prevent-select object-cover"
       />
-      <div className="space-y-2 py-3">
-        <div className="text-lg font-bold">{name}</div>
-        <p className="text-xs text-justify">{description}</p>
+      <div className="space-y-2 py-3  p-4">
+        <div className="text-lg font-bold">{program.name}</div>
+        <p className="text-xs text-justify">{program.description}</p>
       </div>
     </div>
   );
 }
 
-export function teamProfileCard(
-  idx: number,
-  name: string,
-  role: string,
-  image?: string,
-  linkedInURL?: string
-) {
+export function teamProfileCard(profile: ProfileProps) {
   return (
     <div
-      key={`team-${idx}`}
+      key={`team-${uuidv4()}`}
       className="col-span-1 bg-[#0C3457] rounded-xl p-4 space-y-4 text-white shadow shadow-black/80 drop-shadow-lg hoverFloat mb-0.5"
     >
       <img
         src={
-          image ||
+          profile?.imageUrl ||
           "https://www.shutterstock.com/image-vector/user-profile-icon-vector-avatar-600nw-2220431045.jpg"
         }
         alt="hero"
         className="h-[30vh] w-full bg-white rounded-lg prevent-select object-cover"
       />
       <div className="space-y-2 pt-3">
-        <div className="text-lg font-bold">{name}</div>
+        <div className="text-lg font-bold">{profile.name}</div>
         <div className="flex justify-between">
-          <div className="text-xs mt-auto">{role}</div>
-          {linkedInURL && (
+          <div className="text-xs mt-auto">{profile.role}</div>
+          {profile.linkedinUrl && (
             <IoLogoLinkedin
               size={20}
               className="cursor-pointer hover:text-[#FFC632] mt-auto"
-              onClick={() => handleURLClick(linkedInURL)}
+              onClick={() => handleURLClick(profile.linkedinUrl || "")}
             />
           )}
         </div>

@@ -2,17 +2,20 @@ import { contentPaddingClass, Layout } from "../components";
 import {
   motoCard,
   partnerOrganizationIcon,
-  projectProfileCard,
+  programProfileCard,
   teamProfileCard,
 } from "./Utils";
 
 import { MdOutlineHandshake } from "react-icons/md";
 
-import { PartnerProps, ProfileProps, ProgramProps } from "./props";
+import { PartnerProps, ProfileProps } from "./props";
 
 import teamJson from "../data/team.json";
 import partnersJson from "../data/partners.json";
 import programsJson from "../data/programs.json";
+import Carousel from "../components/carousel";
+
+import participantsImage from "../assets/image/participants.jpg";
 
 const hookTitleClass = "font-bold text-5xl font-['WebsiteFontBold']";
 const sectionTitleClass =
@@ -72,7 +75,7 @@ export function Home() {
         </div>
       </div>
 
-      <div className="bg-[#0C3457] py-[20vh] flex flex-col justify-center">
+      <div className="bg-[#0C3457] py-[15vh] flex flex-col justify-center">
         <div className={contentPaddingClass + " space-y-20"}>
           <div className={sectionTitleClass + " text-white"}>Our Moto</div>
           <div className="grid grid-cols-4 gap-10 text-white/70">
@@ -101,27 +104,89 @@ export function Home() {
       </div>
 
       <div
-        className="bg-[#0C3457] py-[20vh] flex flex-col justify-center"
+        className="bg-[#0C3457] pt-[10vh] flex flex-col justify-center"
         id="project"
       >
+        <div className={contentPaddingClass + " space-y-16"}>
+          <center>
+            <hr className="w-[35%] rounded-full opacity-50" />
+          </center>
+          <div className="text-white text-center font-light leading-6 text-2xl relative space-y-8">
+            <div className="flex items-center justify-center relative">
+              <span className="text-9xl opacity-20 absolute left-[10%] lg:left-[18%] transform -translate-x-full">
+                &ldquo;
+              </span>
+              <p className="my-auto">
+                Let’s create a world where everyone has equal access to
+                technology
+              </p>
+            </div>
+            <div className="flex items-center justify-center relative">
+              <p className="my-auto">
+                and the digital skills required to succeed in the digital age.
+              </p>
+              <span className="text-9xl opacity-20 absolute right-[10%] lg:right-[18%] transform translate-x-full">
+                &rdquo;
+              </span>
+            </div>
+          </div>
+          <center>
+            <hr className="w-[35%] rounded-full opacity-50" />
+          </center>
+        </div>
+      </div>
+
+      <div className="bg-[#0C3457] py-[15vh] flex flex-col justify-center">
         <div className={contentPaddingClass + " space-y-20"}>
           <div className={sectionTitleClass + " text-white"}>Our Programs</div>
-          <div className="flex overflow-x-auto snap-x">
-            <div className="grid grid-flow-col auto-cols-max gap-10">
-              {programsJson.map((program: ProgramProps, idx: number) =>
-                projectProfileCard(
-                  idx,
-                  program.name,
-                  program.description,
-                  program.image
-                )
-              )}
-            </div>
+          <Carousel
+            items={programsJson}
+            ItemTemplate={({ item }) => programProfileCard(item)}
+            autoMove={false}
+            numVisibleItems={3}
+          />
+        </div>
+      </div>
+
+      <div
+        className="py-[15vh] flex flex-col justify-center"
+        style={{
+          backgroundImage: `linear-gradient(rgba(12, 52, 87, 0.8), rgba(12, 52, 87, 0.8)), url(${participantsImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div
+          className={contentPaddingClass + " space-x-20 flex justify-between"}
+        >
+          <div className={sectionTitleClass + " text-white pl-[10%] space-y-5"}>
+            <div>10+</div>
+            <div className="text-base">Programs</div>
+          </div>
+          <div className={sectionTitleClass + " text-white space-y-5"}>
+            <div>10+</div>
+            <div className="text-base">Programs</div>
+          </div>
+          <div className={sectionTitleClass + " text-white pr-[10%] space-y-5"}>
+            <div>10+</div>
+            <div className="text-base">Programs</div>
           </div>
         </div>
       </div>
 
-      <div className="bg-white py-[20vh] flex flex-col justify-center">
+      <div
+        className="bg-[#A5BDD1] py-[15vh] flex flex-col justify-center"
+        id="team"
+      >
+        <div className={contentPaddingClass + " space-y-20"}>
+          <div className={sectionTitleClass + " text-[#0C3457]"}>Our Team</div>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+            {teamJson.map((profile: ProfileProps) => teamProfileCard(profile))}
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-white pt-[10vh] pb-[5vh] flex flex-col justify-center">
         <div className={contentPaddingClass + " space-y-20"}>
           <div
             className={sectionTitleClass + " flex justify-center text-[#0C3457"}
@@ -129,34 +194,12 @@ export function Home() {
             Our Partners
           </div>
           <div className="grid grid-cols-6 gap-12 gap-y-24 text-justify">
-            {partnersJson.map((partner: PartnerProps, idx: number) =>
-              partnerOrganizationIcon(
-                idx,
-                partner.name,
-                partner.logo,
-                partner.websiteUrl
-              )
-            )}
-          </div>
-        </div>
-      </div>
-
-      <div
-        className="bg-[#A5BDD1] py-[20vh] flex flex-col justify-center"
-        id="team"
-      >
-        <div className={contentPaddingClass + " space-y-20"}>
-          <div className={sectionTitleClass + " text-[#0C3457]"}>Our Team</div>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
-            {teamJson.map((profile: ProfileProps, idx: number) =>
-              teamProfileCard(
-                idx,
-                profile.name,
-                profile.role,
-                profile.imageUrl,
-                profile.linkedinUrl
-              )
-            )}
+            <Carousel
+              items={partnersJson}
+              ItemTemplate={({ item }) => partnerOrganizationIcon(item)}
+              autoMove={true}
+              numVisibleItems={6}
+            />
           </div>
         </div>
       </div>
