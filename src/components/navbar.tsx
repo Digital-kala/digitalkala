@@ -5,7 +5,7 @@ import heroImage from "../assets/image/logo-white.svg";
 export function NavBar({ pageTitle }: { pageTitle?: string }) {
   return (
     <div
-      className="bg-[#0C3457] w-full text-white py-6 z-10 fixed top-0"
+      className="bg-[#0C3457] w-full text-white py-6 z-50 fixed top-0"
       id={pageTitle}
     >
       <div className={contentPaddingClass}>

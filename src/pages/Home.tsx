@@ -174,6 +174,41 @@ export function Home() {
         </div>
       </div>
 
+      <div className="bg-white py-[15vh] flex flex-col justify-center">
+        <div className={contentPaddingClass + " space-y-20"}>
+          <div className={sectionTitleClass + " text-[#0C3457]"}>
+            Testimonials
+          </div>
+          <div className="flex space-x-5 px-[10%]">
+            <div className="relative">
+              <div className="h-[26vh] w-[20vh] rounded-lg prevent-select" />
+              <div className="h-[26vh] w-[20vh] rounded-lg prevent-select absolute bottom-5 right-5 bg-[#A5BDD1] opacity-50 drop-shadow-lg" />
+              <div className="h-[26vh] w-[20vh] absolute z-10 top-0">
+                <img
+                  src="https://i.pinimg.com/736x/73/17/a5/7317a548844e0d0cccd211002e0abc45.jpg"
+                  alt="participant"
+                  className="h-full w-full rounded-lg prevent-select object-cover drop-shadow-lg"
+                />
+              </div>
+            </div>
+
+            <div className="flex flex-col space-y-10 px-16">
+              <p className="text-justify !leading-7">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged.
+              </p>
+              <div className="font-['WebsiteFontBold'] text-right">
+                - Participant Name
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div
         className="bg-[#A5BDD1] py-[15vh] flex flex-col justify-center"
         id="team"
