@@ -11,7 +11,12 @@ type CarouselProps<T> = {
   numVisibleItems: number;
 };
 
-function Carousel<T>({ items, ItemTemplate, autoMove, numVisibleItems }: CarouselProps<T>) {
+function Carousel<T>({
+  items,
+  ItemTemplate,
+  autoMove,
+  numVisibleItems,
+}: CarouselProps<T>) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const next = () => {
@@ -41,9 +46,9 @@ function Carousel<T>({ items, ItemTemplate, autoMove, numVisibleItems }: Carouse
     return (
       <div
         onClick={onClick}
-        className="rounded-full border-2 border-white/40 text-white/40 hover:text-[#0C3457] hover:bg-white hover:transition-colors duration-300 h-14 w-14 flex items-center justify-center align-middle cursor-pointer"
+        className="p-2.5 rounded-full border-2 border-white/40 text-white/40 hover:text-[#0C3457] hover:bg-white hover:transition-colors duration-300 flex items-center justify-center align-middle cursor-pointer"
       >
-        {React.createElement(icon, { className: "w-8 h-8" })}
+        {React.createElement(icon, { size: 22 })}
       </div>
     );
   }
@@ -60,16 +65,14 @@ function Carousel<T>({ items, ItemTemplate, autoMove, numVisibleItems }: Carouse
   }
 
   return (
-    <div className="flex justify-between items-center">
-      {!autoMove && moveButton(IoIosArrowBack, prev)}
+    <div className="flex justify-around items-center">
+      {moveButton(IoIosArrowBack, prev)}
 
-      <div className="flex space-x-10">
-        {getVisibleItems().map((item) => (
-          <ItemTemplate item={item} />
-        ))}
-      </div>
+      {getVisibleItems().map((item) => (
+        <ItemTemplate item={item} />
+      ))}
 
-      {!autoMove && moveButton(IoIosArrowForward, next)}
+      {moveButton(IoIosArrowForward, next)}
     </div>
   );
 }

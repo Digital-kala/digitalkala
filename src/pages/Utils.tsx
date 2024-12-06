@@ -44,7 +44,7 @@ export function programProfileCard(program: ProgramProps) {
   return (
     <div
       key={`program-${uuidv4()}`}
-      className="snap-start col-span-1 bg-white/20 rounded-xl space-y-4 text-white shadow shadow-white/30 drop-shadow-lg w-96 mb-0.5"
+      className="snap-start col-span-1 w-[26%] bg-white/20 rounded-xl space-y-4 text-white shadow shadow-white/30 drop-shadow-lg mb-0.5"
     >
       <img
         src={

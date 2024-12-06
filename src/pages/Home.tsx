@@ -8,7 +8,7 @@ import {
 
 import { MdOutlineHandshake } from "react-icons/md";
 
-import { PartnerProps, ProfileProps } from "./props";
+import { ProfileProps } from "./props";
 
 import teamJson from "../data/team.json";
 import partnersJson from "../data/partners.json";
@@ -182,7 +182,7 @@ export function Home() {
           <div className="flex space-x-5 px-[10%]">
             <div className="relative">
               <div className="h-[26vh] w-[20vh] rounded-lg prevent-select" />
-              <div className="h-[26vh] w-[20vh] rounded-lg prevent-select absolute bottom-5 right-5 bg-[#A5BDD1] opacity-50 drop-shadow-lg" />
+              <div className="h-[26vh] w-[20vh] rounded-lg prevent-select absolute bottom-[1.8rem] right-5 bg-[#A5BDD1] opacity-50 drop-shadow-lg" />
               <div className="h-[26vh] w-[20vh] absolute z-10 top-0">
                 <img
                   src="https://i.pinimg.com/736x/73/17/a5/7317a548844e0d0cccd211002e0abc45.jpg"
