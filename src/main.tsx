@@ -20,8 +20,9 @@ const router = createHashRouter([
       </PrimeReactProvider>
     ),
   },
+  // Catch-all route and redirect to this path for now
   {
-    path: "/",
+    path: "*",
     element: (
       <PrimeReactProvider value={{ unstyled: true, pt: Tailwind }}>
         <WorkInProgress />

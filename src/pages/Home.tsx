@@ -15,7 +15,7 @@ import partnersJson from "../data/partners.json";
 import programsJson from "../data/programs.json";
 import Carousel from "../components/carousel";
 
-import participantsImage from "../assets/image/participants.jpg";
+import participantsImage from "../assets/image/background/participants.jpg";
 
 const hookTitleClass = "font-bold text-5xl font-['WebsiteFontBold']";
 const sectionTitleClass =
