@@ -13,7 +13,7 @@ export function partnerOrganizationIcon(partner: PartnerProps) {
     <div
       key={`partner-${uuidv4()}`}
       className={
-        "space-y-4 col-span-1 " + (partner.websiteUrl && " cursor-pointer")
+        "space-y-4 col-span-1 " + (partner.websiteUrl && " cursor-pointer hover:rounded-lg hover:outline-slate-300 hover:outline-dashed")
       }
       onClick={() => partner.websiteUrl && handleURLClick(partner.websiteUrl)}
     >
@@ -44,7 +44,7 @@ export function programProfileCard(program: ProgramProps) {
   return (
     <div
       key={`program-${uuidv4()}`}
-      className="snap-start col-span-1 w-[26%] bg-white/20 rounded-xl space-y-4 text-white shadow shadow-white/30 drop-shadow-lg mb-0.5"
+      className="snap-start col-span-1 w-[26%] bg-white/20 rounded-xl space-y-4 text-white shadow shadow-white/30 drop-shadow-lg mb-auto"
     >
       <img
         src={

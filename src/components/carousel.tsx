@@ -11,7 +11,13 @@ type CarouselProps<T> = {
   numVisibleItems: number;
 };
 
-function Carousel<T>({
+type TestinomialProps = {
+  name: string;
+  testimonial: string;
+  image?: string;
+};
+
+export function Carousel<T>({
   items,
   ItemTemplate,
   autoMove,
@@ -25,11 +31,7 @@ function Carousel<T>({
 
   const prev = () => {
     setCurrentIndex((prevIndex) => {
-      if (prevIndex === 0) {
-        return items.length - 1;
-      } else {
-        return prevIndex - 1;
-      }
+      return prevIndex === 0 ? items.length - 1 : prevIndex - 1;
     });
   };
 
@@ -55,7 +57,7 @@ function Carousel<T>({
 
   useEffect(() => {
     if (autoMove) {
-      const interval = setInterval(next, 1500); // Auto-cycle every 3 seconds
+      const interval = setInterval(next, 3000); // Auto-cycle every 3 seconds
       return () => clearInterval(interval); // Cleanup the interval on component unmount
     }
   }, []);
@@ -77,4 +79,58 @@ function Carousel<T>({
   );
 }
 
-export default Carousel;
+export function TestimonialCarousel({ items }: { items: TestinomialProps[] }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const next = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length);
+  };
+
+  const prev = () => {
+    setCurrentIndex((prevIndex) => {
+      return prevIndex === 0 ? items.length - 1 : prevIndex - 1;
+    });
+  };
+
+  function moveButton(icon: IconType, onClick: () => void) {
+    return (
+      <div
+        onClick={onClick}
+        className="p-2.5 rounded-full border-2 border-[#0C3457] text-[#0C3457] hover:text-white hover:bg-[#0C3457] hover:transition-colors duration-300 flex items-center justify-center align-middle cursor-pointer"
+      >
+        {React.createElement(icon, { size: 22 })}
+      </div>
+    );
+  }
+
+  return (
+    <div className="flex justify-around items-center">
+      {moveButton(IoIosArrowBack, prev)}
+
+      <div className="flex space-x-5 px-[10%]">
+        <div className="relative">
+          <div className="h-[26vh] w-[20vh] rounded-lg prevent-select" />
+          <div className="h-full w-full rounded-lg prevent-select absolute bottom-[10%] right-[15%] bg-[#A5BDD1]/50 shadow-lg shadow-slate-400 drop-shadow-lg" />
+          <div className="h-full w-full absolute z-10 top-0">
+            <img
+              src={items[currentIndex].image}
+              alt="participant"
+              className="h-full w-full rounded-lg prevent-select object-cover shadow-lg shadow-slate-400 drop-shadow-lg"
+            />
+          </div>
+        </div>
+
+        <div className="flex flex-col space-y-10 px-16">
+          <p className="text-justify !leading-7">
+            {items[currentIndex].testimonial}
+          </p>
+          <div className="font-['WebsiteFontBold'] text-right">
+            ~ {items[currentIndex].name}
+          </div>
+        </div>
+      </div>
+
+      {moveButton(IoIosArrowForward, next)}
+    </div>
+  );
+}

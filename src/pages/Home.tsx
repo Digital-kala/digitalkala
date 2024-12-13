@@ -1,4 +1,10 @@
-import { contentPaddingClass, Layout } from "../components";
+import {
+  contentPaddingClass,
+  Layout,
+  Carousel,
+  TestimonialCarousel,
+} from "../components";
+
 import {
   motoCard,
   partnerOrganizationIcon,
@@ -10,10 +16,12 @@ import { MdOutlineHandshake } from "react-icons/md";
 
 import { ProfileProps } from "./props";
 
-import teamJson from "../data/team.json";
 import partnersJson from "../data/partners.json";
 import programsJson from "../data/programs.json";
-import Carousel from "../components/carousel";
+import teamJson from "../data/team.json";
+import testimonialJson from "../data/testimonials.json";
+
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 import participantsImage from "../assets/image/background/participants.jpg";
 
@@ -49,28 +57,60 @@ export function Home() {
 
       <div className="bg-[#A5BDD1] py-[20vh] flex flex-col justify-center">
         <div className={contentPaddingClass + " space-y-20"}>
-          <div className={sectionTitleClass}>Our Mission</div>
-          <div className="space-y-5 text-justify">
-            <p className="!leading-7">
-              Our vision is one of a digitally literate Nepal where everyone,
-              regardless of their socioeconomic, geographical, or linguistic
-              background, is empowered to thrive in the digital age.
-            </p>
-            <p className="!leading-7">
-              Our mission is to bridge the digital divide by equipping
-              marginalized and underprivileged communities with the knowledge
-              and tools to explore and excel in the digital realm. We aim to
-              provide hands-on training workshops, mentorship programs, and
-              resource compilations to enable participants to secure academic
-              and professional opportunities.
-            </p>
-            <p className="!leading-7">
-              By fostering a sense of curiosity, confidence, and collaboration
-              between educators and learners, we aim to create a community of
-              lifelong learners who are able to deploy their digital awareness
-              and skills to successfully navigate the ongoing digital
-              revolution.
-            </p>
+          <div className="space-y-20">
+            <div className={sectionTitleClass}>Our Vision</div>
+            <div className="grid grid-cols-1 space-y-8 md:space-y-0 md:grid-cols-2">
+              <div className="space-y-5 text-justify col-span-1">
+                <p className="!leading-7">
+                  Our vision is to build a digitally literate and empowered
+                  Nepal where everyone, regardless of their background, has the
+                  knowledge, skills, and confidence to thrive in the digital
+                  age. We hope to create a community where everyone is able to
+                  safely leverage digital tools, technologies, and platforms to
+                  foster their personal and professional growth.
+                </p>
+              </div>
+              <div className="col-span-1">
+                <DotLottieReact
+                  src="https://lottie.host/029ba928-3d5e-4f97-81d5-6f30e254d7fd/6OzgIYdvsf.lottie"
+                  loop
+                  autoplay
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-20">
+            <div className={sectionTitleClass}>Our Mission</div>
+            <div className="grid grid-cols-1 space-y-8 md:space-y-0 md:grid-cols-2">
+              <div className="col-span-1">
+              <DotLottieReact
+                  src="https://lottie.host/e04ccce9-5176-401e-a6c0-ad5f72c9aa2a/DKfyztdCJC.lottie"
+                  loop
+                  autoplay
+                />
+              </div>
+              <div className="space-y-5 text-justify col-span-1">
+                <p className="!leading-7">
+                  We are striving towards bridging the digital divide by
+                  equipping marginalized communities with the knowledge and
+                  tools to successfully navigate the digital realm.
+                </p>
+                <p className="!leading-7">
+                  We aim to provide hands-on training workshops, mentorship
+                  programs, and tailored resources to participants to enable
+                  them to secure academic and professional opportunities. In
+                  addition to providing learning opportunities, we also aspire
+                  to work with policy-level stakeholders to develop digital
+                  literacy standards that promote digital rights and inclusion.
+                </p>
+                <p className="!leading-7">
+                  Our mission is to build a community of educators and learners
+                  who can safely and responsibly participate in the ongoing
+                  digital revolution.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -78,7 +118,7 @@ export function Home() {
       <div className="bg-[#0C3457] py-[15vh] flex flex-col justify-center">
         <div className={contentPaddingClass + " space-y-20"}>
           <div className={sectionTitleClass + " text-white"}>Our Moto</div>
-          <div className="grid grid-cols-4 gap-10 text-white/70">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 space-y-8 sm:space-y-0 gap-10 sm:gap-20 md:gap-10 text-white/70">
             {motoCard(
               "Moto",
               "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
@@ -151,23 +191,25 @@ export function Home() {
       <div
         className="py-[15vh] flex flex-col justify-center"
         style={{
-          backgroundImage: `linear-gradient(rgba(12, 52, 87, 0.8), rgba(12, 52, 87, 0.8)), url(${participantsImage})`,
+          backgroundImage: `linear-gradient(rgba(12, 52, 87, 0.8), rgba(12, 52, 87, 0.9)), url(${participantsImage})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        <div
-          className={contentPaddingClass + " space-x-20 flex justify-between"}
-        >
-          <div className={sectionTitleClass + " text-white pl-[10%] space-y-5"}>
+        <div className={contentPaddingClass + " flex justify-around"}>
+          <div
+            className={sectionTitleClass + " text-lg md:text-5xl  text-white space-y-5"}
+          >
             <div>10+</div>
             <div className="text-base">Programs</div>
           </div>
-          <div className={sectionTitleClass + " text-white space-y-5"}>
+
+          <div className={sectionTitleClass + " text-lg md:text-5xl text-white space-y-5"}>
             <div>10+</div>
             <div className="text-base">Programs</div>
           </div>
-          <div className={sectionTitleClass + " text-white pr-[10%] space-y-5"}>
+
+          <div className={sectionTitleClass + " text-lg md:text-5xl text-white space-y-5"}>
             <div>10+</div>
             <div className="text-base">Programs</div>
           </div>
@@ -179,33 +221,7 @@ export function Home() {
           <div className={sectionTitleClass + " text-[#0C3457]"}>
             Testimonials
           </div>
-          <div className="flex space-x-5 px-[10%]">
-            <div className="relative">
-              <div className="h-[26vh] w-[20vh] rounded-lg prevent-select" />
-              <div className="h-[26vh] w-[20vh] rounded-lg prevent-select absolute bottom-[1.8rem] right-5 bg-[#A5BDD1] opacity-50 drop-shadow-lg" />
-              <div className="h-[26vh] w-[20vh] absolute z-10 top-0">
-                <img
-                  src="https://i.pinimg.com/736x/73/17/a5/7317a548844e0d0cccd211002e0abc45.jpg"
-                  alt="participant"
-                  className="h-full w-full rounded-lg prevent-select object-cover drop-shadow-lg"
-                />
-              </div>
-            </div>
-
-            <div className="flex flex-col space-y-10 px-16">
-              <p className="text-justify !leading-7">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged.
-              </p>
-              <div className="font-['WebsiteFontBold'] text-right">
-                - Participant Name
-              </div>
-            </div>
-          </div>
+          <TestimonialCarousel items={testimonialJson} />
         </div>
       </div>
 
