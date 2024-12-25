@@ -1,31 +1,13 @@
 [
   {
-    "name": "Labbi Karmacharya",
-    "role": "Co-Founder",
-    "imageUrl": "https://cdn.prod.website-files.com/637b58dfc65fb87428edb28a/66e9a55ccba12f51ca7b7a57_labbi-horiz.jpg",
-    "linkedinUrl": "https://np.linkedin.com/in/labbi-karmacharya"
-  },
-  {
     "name": "Aastha Acharya",
     "role": "Co-Founder",
     "imageUrl": "https://drive.google.com/thumbnail?id=17yT6jtcf7UslxOrMg5ThTvlOlUu__fYD&sz=w1000",
     "linkedinUrl": "https://www.linkedin.com/in/aasthaacharya2000/"
   },
   {
-    "name": "Dipa Rai",
-    "role": "Co-Founder",
-    "imageUrl": "https://drive.google.com/thumbnail?id=1_sGJm3PJxFahD6JOOOCWJ-DBEwMAQMiC&sz=w1000",
-    "linkedinUrl": "https://www.linkedin.com/in/yakhha-dipa-rai-49aa79275/"
-  },
-  {
-    "name": "Pooja Shrestha",
-    "role": "Brand Manager",
-    "imageUrl": "https://drive.google.com/thumbnail?id=1VfwzFdqiYxOgSMPvsjzSqucQbbVAMQgF&sz=w1000",
-    "linkedinUrl": "https://www.linkedin.com/in/pooja-shrestha-818a231b4/"
-  },
-  {
     "name": "Aayusha Shrestha",
-    "role": "Role",
+    "role": "Project Coordinator",
     "imageUrl": "https://cdn.prod.website-files.com/637b58dfc65fb87428edb28a/64e3dc675f048a1377508e37_aayusha1.png",
     "linkedinUrl": "https://www.linkedin.com/in/shresthaaayusha/"
   },
@@ -36,9 +18,27 @@
     "linkedinUrl": "https://www.linkedin.com/in/animeshbasnet/"
   },
   {
+    "name": "Dipa Rai",
+    "role": "Co-Founder",
+    "imageUrl": "https://drive.google.com/thumbnail?id=1_sGJm3PJxFahD6JOOOCWJ-DBEwMAQMiC&sz=w1000",
+    "linkedinUrl": "https://www.linkedin.com/in/yakhha-dipa-rai-49aa79275/"
+  },
+  {
+    "name": "Labbi Karmacharya",
+    "role": "Co-Founder",
+    "imageUrl": "https://cdn.prod.website-files.com/637b58dfc65fb87428edb28a/66e9a55ccba12f51ca7b7a57_labbi-horiz.jpg",
+    "linkedinUrl": "https://np.linkedin.com/in/labbi-karmacharya"
+  },
+  {
+    "name": "Pooja Shrestha",
+    "role": "Brand Manager",
+    "imageUrl": "https://drive.google.com/thumbnail?id=1VfwzFdqiYxOgSMPvsjzSqucQbbVAMQgF&sz=w1000",
+    "linkedinUrl": "https://www.linkedin.com/in/pooja-shrestha-818a231b4/"
+  },
+  {
     "name": "Unika Karmacharya",
     "role": "Intern",
-    "imageUrl": "https://women-lead.org/wp-content/uploads/2023/10/IMG_1590.jpg",
+    "imageUrl": "https://drive.google.com/thumbnail?id=1XkrPpqUAfYHXpQRZ_1R4cxSA1RPzmU9s&sz=w1000",
     "linkedinUrl": "https://www.linkedin.com/in/unika-karmacharya-15455a294/"
   }
 ]

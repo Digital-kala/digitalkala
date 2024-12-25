@@ -21,7 +21,7 @@ import programsJson from "../data/programs.json";
 import teamJson from "../data/team.json";
 import testimonialJson from "../data/testimonials.json";
 
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 import participantsImage from "../assets/image/background/participants.jpg";
 
@@ -60,14 +60,12 @@ export function Home() {
           <div className="space-y-20">
             <div className={sectionTitleClass}>Our Vision</div>
             <div className="grid grid-cols-1 space-y-8 md:space-y-0 md:grid-cols-2">
-              <div className="space-y-5 text-justify col-span-1">
+              <div className="space-y-5 text-justify col-span-1 m-auto">
                 <p className="!leading-7">
                   Our vision is to build a digitally literate and empowered
                   Nepal where everyone, regardless of their background, has the
                   knowledge, skills, and confidence to thrive in the digital
-                  age. We hope to create a community where everyone is able to
-                  safely leverage digital tools, technologies, and platforms to
-                  foster their personal and professional growth.
+                  age.
                 </p>
               </div>
               <div className="col-span-1">
@@ -83,8 +81,8 @@ export function Home() {
           <div className="space-y-20">
             <div className={sectionTitleClass}>Our Mission</div>
             <div className="grid grid-cols-1 space-y-8 md:space-y-0 md:grid-cols-2">
-              <div className="col-span-1">
-              <DotLottieReact
+              <div className="col-span-1 m-auto">
+                <DotLottieReact
                   src="https://lottie.host/e04ccce9-5176-401e-a6c0-ad5f72c9aa2a/DKfyztdCJC.lottie"
                   loop
                   autoplay
@@ -92,17 +90,35 @@ export function Home() {
               </div>
               <div className="space-y-5 text-justify col-span-1">
                 <p className="!leading-7">
-                  We are striving towards bridging the digital divide by
+                  Digital Kala strives towards bridging the digital divide by
                   equipping marginalized communities with the knowledge and
                   tools to successfully navigate the digital realm.
                 </p>
                 <p className="!leading-7">
-                  We aim to provide hands-on training workshops, mentorship
-                  programs, and tailored resources to participants to enable
-                  them to secure academic and professional opportunities. In
-                  addition to providing learning opportunities, we also aspire
-                  to work with policy-level stakeholders to develop digital
-                  literacy standards that promote digital rights and inclusion.
+                  We hope to create a community where everyone is able to
+                  leverage digital tools, technologies, and platforms to foster
+                  their personal and professional growth. We aim to provide
+                  hands-on training workshops, mentorship programs, and tailored
+                  resources to participants to enable them to secure academic
+                  and professional opportunities.
+                </p>
+                <p className="!leading-7">
+                  In addition to providing growth opportunities, we also hope
+                  for Digital Kala to advocate for digital safety. We want to
+                  achieve this by making participants aware of the threats and
+                  issues they may face online while simultaneously preparing
+                  them to take actions against said issues and safeguard
+                  themselves.
+                </p>
+                <p className="!leading-7">
+                  By integrating growth opportunities with a strong emphasis on
+                  digital safety, we aim to cultivate a generation of digitally
+                  empowered citizens who are not only aware of their rights and
+                  responsibilities but also able to utilize digital tools
+                  responsibly and effectively. We aspire to work with
+                  policy-level stakeholders to create frameworks that promote
+                  digitals rights, ensure inclusion, and set standards for
+                  responsible digital citizenship.
                 </p>
                 <p className="!leading-7">
                   Our mission is to build a community of educators and learners
@@ -198,18 +214,28 @@ export function Home() {
       >
         <div className={contentPaddingClass + " flex justify-around"}>
           <div
-            className={sectionTitleClass + " text-lg md:text-5xl  text-white space-y-5"}
+            className={
+              sectionTitleClass + " text-lg md:text-5xl  text-white space-y-5"
+            }
           >
             <div>10+</div>
             <div className="text-base">Programs</div>
           </div>
 
-          <div className={sectionTitleClass + " text-lg md:text-5xl text-white space-y-5"}>
+          <div
+            className={
+              sectionTitleClass + " text-lg md:text-5xl text-white space-y-5"
+            }
+          >
             <div>10+</div>
             <div className="text-base">Programs</div>
           </div>
 
-          <div className={sectionTitleClass + " text-lg md:text-5xl text-white space-y-5"}>
+          <div
+            className={
+              sectionTitleClass + " text-lg md:text-5xl text-white space-y-5"
+            }
+          >
             <div>10+</div>
             <div className="text-base">Programs</div>
           </div>
