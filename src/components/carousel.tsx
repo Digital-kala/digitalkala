@@ -1,5 +1,6 @@
 import React, { useState, FunctionComponent, useEffect } from "react";
 
+import { Fade } from "react-awesome-reveal";
 import { IconType } from "react-icons";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
@@ -107,28 +108,30 @@ export function TestimonialCarousel({ items }: { items: TestinomialProps[] }) {
     <div className="flex justify-around items-center">
       {moveButton(IoIosArrowBack, prev)}
 
-      <div className="flex space-x-5 px-[10%]">
-        <div className="relative">
-          <div className="h-[26vh] w-[20vh] rounded-lg prevent-select" />
-          <div className="h-full w-full rounded-lg prevent-select absolute bottom-[10%] right-[15%] bg-[#A5BDD1]/50 shadow-lg shadow-slate-400 drop-shadow-lg" />
-          <div className="h-full w-full absolute z-10 top-0">
-            <img
-              src={items[currentIndex].image}
-              alt="participant"
-              className="h-full w-full rounded-lg prevent-select object-cover shadow-lg shadow-slate-400 drop-shadow-lg"
-            />
+      <Fade key={currentIndex}>
+        <div className="flex space-x-5 px-[10%]">
+          <div className="relative">
+            <div className="h-[26vh] w-[20vh] rounded-lg prevent-select" />
+            <div className="h-full w-full rounded-lg prevent-select absolute bottom-[10%] right-[15%] bg-[#A5BDD1]/50 shadow-lg shadow-slate-400 drop-shadow-lg" />
+            <div className="h-full w-full absolute z-10 top-0">
+              <img
+                src={items[currentIndex].image}
+                alt="participant"
+                className="h-full w-full rounded-lg prevent-select object-cover shadow-lg shadow-slate-400 drop-shadow-lg"
+              />
+            </div>
           </div>
-        </div>
 
-        <div className="flex flex-col space-y-10 px-16">
-          <p className="text-justify !leading-7">
-            {items[currentIndex].testimonial}
-          </p>
-          <div className="font-['WebsiteFontBold'] text-right">
-            ~ {items[currentIndex].name}
+          <div className="flex flex-col space-y-10 px-16">
+            <p className="text-justify !leading-7">
+              {items[currentIndex].testimonial}
+            </p>
+            <div className="font-['WebsiteFontBold'] text-right">
+              ~ {items[currentIndex].name}
+            </div>
           </div>
         </div>
-      </div>
+      </Fade>
 
       {moveButton(IoIosArrowForward, next)}
     </div>

@@ -5,24 +5,30 @@ import { v4 as uuidv4 } from "uuid";
 import { PartnerProps, ProfileProps, ProgramProps } from "./props";
 import { handleURLClick } from "../components";
 
+import { Fade } from "react-awesome-reveal";
+
 import { IconType } from "react-icons";
 import { IoLogoLinkedin } from "react-icons/io5";
 
 export function partnerOrganizationIcon(partner: PartnerProps) {
   return (
-    <div
-      key={`partner-${uuidv4()}`}
-      className={
-        "space-y-4 col-span-1 " + (partner.websiteUrl && " cursor-pointer hover:rounded-lg hover:outline-slate-300 hover:outline-dashed")
-      }
-      onClick={() => partner.websiteUrl && handleURLClick(partner.websiteUrl)}
-    >
-      <img
-        src={partner.logo}
-        className="h-[15vh] rounded-xl py-2 object-contain w-full"
-      />
-      <center className="text-xs leading-5 h-[4vh]">{partner.name} </center>
-    </div>
+    <Fade>
+      <div
+        key={`partner-${uuidv4()}`}
+        className={
+          "space-y-4 col-span-1 " +
+          (partner.websiteUrl &&
+            " cursor-pointer hover:rounded-lg hover:outline-slate-300 hover:outline-dashed")
+        }
+        onClick={() => partner.websiteUrl && handleURLClick(partner.websiteUrl)}
+      >
+        <img
+          src={partner.logo}
+          className="h-[15vh] rounded-xl py-2 object-contain w-full"
+        />
+        <center className="text-xs leading-5 h-[4vh]">{partner.name} </center>
+      </div>
+    </Fade>
   );
 }
 
@@ -46,18 +52,20 @@ export function programProfileCard(program: ProgramProps) {
       key={`program-${uuidv4()}`}
       className="snap-start col-span-1 w-[26%] bg-white/20 rounded-xl space-y-4 text-white shadow shadow-white/30 drop-shadow-lg mb-auto"
     >
-      <img
-        src={
-          program?.image ||
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyNItRCgZBEtOjEeVdZA7HYM1xb0SxdlxwLw&s"
-        }
-        alt="hero"
-        className="h-[30vh] w-full rounded-t-xl prevent-select object-cover"
-      />
-      <div className="space-y-2 py-3  p-4">
-        <div className="text-lg font-bold">{program.name}</div>
-        <p className="text-xs text-justify">{program.description}</p>
-      </div>
+      <Fade>
+        <img
+          src={
+            program?.image ||
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyNItRCgZBEtOjEeVdZA7HYM1xb0SxdlxwLw&s"
+          }
+          alt="hero"
+          className="h-[30vh] w-full rounded-t-xl prevent-select object-cover"
+        />
+        <div className="space-y-2 py-3  p-4">
+          <div className="text-lg font-bold">{program.name}</div>
+          <p className="text-xs text-justify">{program.description}</p>
+        </div>
+      </Fade>
     </div>
   );
 }
