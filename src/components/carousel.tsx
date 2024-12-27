@@ -10,6 +10,7 @@ type CarouselProps<T> = {
   ItemTemplate: FunctionComponent<{ item: T }>;
   autoMove: boolean;
   numVisibleItems: number;
+  isSmallScreen: boolean;
 };
 
 type TestinomialProps = {
@@ -23,6 +24,7 @@ export function Carousel<T>({
   ItemTemplate,
   autoMove,
   numVisibleItems,
+  isSmallScreen,
 }: CarouselProps<T>) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -49,9 +51,9 @@ export function Carousel<T>({
     return (
       <div
         onClick={onClick}
-        className="p-2.5 rounded-full border-2 border-white/40 text-white/40 hover:text-[#0C3457] hover:bg-white hover:transition-colors duration-300 flex items-center justify-center align-middle cursor-pointer"
+        className="p-1.5 md:p-2.5 rounded-full border-2 border-white/40 text-white/40 hover:text-[#0C3457] hover:bg-white hover:transition-colors duration-300 flex items-center justify-center align-middle cursor-pointer"
       >
-        {React.createElement(icon, { size: 22 })}
+        {React.createElement(icon, { size: isSmallScreen ? 18 : 22 })}
       </div>
     );
   }
@@ -68,7 +70,7 @@ export function Carousel<T>({
   }
 
   return (
-    <div className="flex justify-around items-center">
+    <div className="flex justify-between md:justify-around items-center">
       {moveButton(IoIosArrowBack, prev)}
 
       {getVisibleItems().map((item) => (
@@ -80,7 +82,7 @@ export function Carousel<T>({
   );
 }
 
-export function TestimonialCarousel({ items }: { items: TestinomialProps[] }) {
+export function TestimonialCarousel({ items, isSmallScreen}: { items: TestinomialProps[], isSmallScreen: boolean }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const next = () => {
@@ -97,9 +99,9 @@ export function TestimonialCarousel({ items }: { items: TestinomialProps[] }) {
     return (
       <div
         onClick={onClick}
-        className="p-2.5 rounded-full border-2 border-[#0C3457] text-[#0C3457] hover:text-white hover:bg-[#0C3457] hover:transition-colors duration-300 flex items-center justify-center align-middle cursor-pointer"
+        className="p-1.5 md:p-2.5 rounded-full border-2 border-[#0C3457] text-[#0C3457] hover:text-white hover:bg-[#0C3457] hover:transition-colors duration-300 flex items-center justify-center align-middle cursor-pointer"
       >
-        {React.createElement(icon, { size: 22 })}
+        {React.createElement(icon, { size: isSmallScreen ? 18 : 22 })}
       </div>
     );
   }
@@ -109,9 +111,9 @@ export function TestimonialCarousel({ items }: { items: TestinomialProps[] }) {
       {moveButton(IoIosArrowBack, prev)}
 
       <Fade key={currentIndex}>
-        <div className="flex space-x-5 px-[10%]">
-          <div className="relative">
-            <div className="h-[26vh] w-[20vh] rounded-lg prevent-select" />
+        <div className="flex flex-col md:flex-row space-x-5 space-y-10 md:space-y-0 px-[10%]">
+          <div className="relative w-[10rem] md:w-[33rem] mx-auto mt-5 md:mt-0">
+            <div className="h-[20vh] md:h-[26vh]  rounded-lg prevent-select" />
             <div className="h-full w-full rounded-lg prevent-select absolute bottom-[10%] right-[15%] bg-[#A5BDD1]/50 shadow-lg shadow-slate-400 drop-shadow-lg" />
             <div className="h-full w-full absolute z-10 top-0">
               <img
@@ -122,7 +124,7 @@ export function TestimonialCarousel({ items }: { items: TestinomialProps[] }) {
             </div>
           </div>
 
-          <div className="flex flex-col space-y-10 px-16">
+          <div className="flex flex-col space-y-10 px-0 md:px-16">
             <p className="text-justify !leading-7">
               {items[currentIndex].testimonial}
             </p>

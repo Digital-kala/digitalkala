@@ -31,7 +31,7 @@ export function Footer() {
           <span className="text-[#FFC632]">digital gap.</span>
         </div>
 
-        <div className="grid grid-cols-8">
+        <div className="grid grid-cols-2 md:grid-cols-8 gap-y-10 md:gap-y-0">
           <div className="w-[8rem] col-span-3">
             <img src={heroImage} alt="hero" />
           </div>
@@ -85,7 +85,7 @@ export function Footer() {
       >
         <div className={navigationTextClass}>Privacy Policy</div>
 
-        <div className="text-black">
+        <div className="text-black text-right">
           &copy; {new Date().getFullYear()}. All Rights Reserved by Digital
           Kala.
         </div>

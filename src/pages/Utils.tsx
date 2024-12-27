@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { v4 as uuidv4 } from "uuid";
 
@@ -9,6 +9,27 @@ import { Fade } from "react-awesome-reveal";
 
 import { IconType } from "react-icons";
 import { IoLogoLinkedin } from "react-icons/io5";
+
+export const useIsSmallScreen = (breakpoint = 768) => {
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia(`(max-width: ${breakpoint}px)`);
+    const handleResize = () => setIsSmallScreen(mediaQuery.matches);
+
+    // Set the initial state
+    handleResize();
+
+    // Add the event listener
+    mediaQuery.addEventListener('change', handleResize);
+
+    // Cleanup function
+    return () => mediaQuery.removeEventListener('change', handleResize);
+  }, [breakpoint]);
+
+  return isSmallScreen;
+};
+
 
 export function partnerOrganizationIcon(partner: PartnerProps) {
   return (
@@ -50,7 +71,7 @@ export function programProfileCard(program: ProgramProps) {
   return (
     <div
       key={`program-${uuidv4()}`}
-      className="snap-start col-span-1 w-[26%] bg-white/20 rounded-xl space-y-4 text-white shadow shadow-white/30 drop-shadow-lg mb-auto"
+      className="snap-start col-span-1 w-[70%] md:w-[26%] bg-white/20 rounded-xl space-y-4 text-white shadow shadow-white/30 drop-shadow-lg mb-auto"
     >
       <Fade>
         <img
@@ -59,7 +80,7 @@ export function programProfileCard(program: ProgramProps) {
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyNItRCgZBEtOjEeVdZA7HYM1xb0SxdlxwLw&s"
           }
           alt="hero"
-          className="h-[30vh] w-full rounded-t-xl prevent-select object-cover"
+          className="h-[20vh] md:h-[30vh] w-full rounded-t-xl prevent-select object-cover"
         />
         <div className="space-y-2 py-3  p-4">
           <div className="text-lg font-bold">{program.name}</div>
@@ -74,7 +95,7 @@ export function teamProfileCard(profile: ProfileProps) {
   return (
     <div
       key={`team-${uuidv4()}`}
-      className="col-span-1 bg-[#0C3457] rounded-xl p-4 space-y-4 text-white shadow shadow-black/80 drop-shadow-lg hoverFloat mb-0.5"
+      className="col-span-1 bg-[#0C3457] rounded-xl p-4 space-y-2 md:space-y-4 text-white shadow shadow-black/80 drop-shadow-lg hoverFloat mb-0.5"
     >
       <img
         src={
@@ -82,12 +103,12 @@ export function teamProfileCard(profile: ProfileProps) {
           "https://www.shutterstock.com/image-vector/user-profile-icon-vector-avatar-600nw-2220431045.jpg"
         }
         alt="hero"
-        className="h-[30vh] w-full bg-white rounded-lg prevent-select object-cover"
+        className="h-[18vh] md:h-[30vh] w-full bg-white rounded-lg prevent-select object-cover"
       />
       <div className="space-y-2 pt-3">
-        <div className="text-lg font-bold">{profile.name}</div>
+        <div className="text-base md:text-lg font-bold">{profile.name}</div>
         <div className="flex justify-between">
-          <div className="text-xs mt-auto">{profile.role}</div>
+          <div className="text-2xs md:text-xs mt-auto">{profile.role}</div>
           {profile.linkedinUrl && (
             <IoLogoLinkedin
               size={20}

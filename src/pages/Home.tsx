@@ -3,6 +3,7 @@ import {
   Layout,
   Carousel,
   TestimonialCarousel,
+  carouselPaddingClass,
 } from "../components";
 
 import {
@@ -10,6 +11,7 @@ import {
   partnerOrganizationIcon,
   programProfileCard,
   teamProfileCard,
+  useIsSmallScreen,
 } from "./Utils";
 
 import { MdOutlineHandshake } from "react-icons/md";
@@ -25,11 +27,15 @@ import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 import participantsImage from "../assets/image/background/participants.jpg";
 
-const hookTitleClass = "font-bold text-5xl font-['WebsiteFontBold']";
+const globalTitleContentSpacing = "space-y-10 md:space-y-14";
+const hookTitleClass =
+  "font-bold text-5xl font-['WebsiteFontBold'] leading-[4rem]";
 const sectionTitleClass =
-  "font-bold text-3xl font-['WebsiteFontMedium'] tracking-wider text-center";
+  "font-bold text-2xl md:text-3xl font-['WebsiteFontMedium'] tracking-wider text-center";
 
 export function Home() {
+  const isSmallScreen = useIsSmallScreen();
+
   return (
     <Layout pageTitle="Home">
       <div
@@ -37,17 +43,16 @@ export function Home() {
         id="home"
       >
         <div className={contentPaddingClass}>
-          <div className="space-y-5 prevent-select">
+          <div className="space-y-0 md:space-y-5 prevent-select">
             <div className={hookTitleClass}>Empowering Through</div>
-            <div className="flex flex-row">
+            <div className="flex flex-col md:flex-row">
               <div className={hookTitleClass}>Education</div>
-              <div className="text-base pl-4 slide-up">
+              <div className="text-base pl-0 md:pl-4 slide-up">
                 Explore Digital Literacy With Us
               </div>
             </div>
-
-            <div className="pt-4">
-              <button className="bg-[#FFC632] text-black px-12 py-3 rounded-xl text-lg">
+            <div className="pt-8 md:pt-4">
+              <button className="bg-[#FFC632] text-black px-10 py-3 rounded-xl text-lg">
                 Get Started
               </button>
             </div>
@@ -57,11 +62,11 @@ export function Home() {
 
       <div className="bg-[#A5BDD1] py-[20vh] flex flex-col justify-center">
         <div className={contentPaddingClass + " space-y-20"}>
-          <div className="space-y-20">
+          <div className="space-y-10 md:-space-y-5">
             <div className={sectionTitleClass}>Our Vision</div>
             <div className="grid grid-cols-1 space-y-8 md:space-y-0 md:grid-cols-2">
               <div className="space-y-5 text-justify col-span-1 m-auto">
-                <p className="!leading-7">
+                <p className="!leading-7 ">
                   Our vision is to build a digitally literate and empowered
                   Nepal where everyone, regardless of their background, has the
                   knowledge, skills, and confidence to thrive in the digital
@@ -78,7 +83,7 @@ export function Home() {
             </div>
           </div>
 
-          <div className="space-y-20">
+          <div className={globalTitleContentSpacing}>
             <div className={sectionTitleClass}>Our Mission</div>
             <div className="grid grid-cols-1 space-y-8 md:space-y-0 md:grid-cols-2">
               <div className="col-span-1 m-auto">
@@ -132,7 +137,7 @@ export function Home() {
       </div>
 
       <div className="bg-[#0C3457] py-[15vh] flex flex-col justify-center">
-        <div className={contentPaddingClass + " space-y-20"}>
+        <div className={contentPaddingClass + " " + globalTitleContentSpacing}>
           <div className={sectionTitleClass + " text-white"}>Our Moto</div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 space-y-8 sm:space-y-0 gap-10 sm:gap-20 md:gap-10 text-white/70">
             {motoCard(
@@ -163,22 +168,22 @@ export function Home() {
         className="bg-[#0C3457] pt-[10vh] flex flex-col justify-center"
         id="project"
       >
-        <div className={contentPaddingClass + " space-y-16"}>
+        <div className={contentPaddingClass + " " + globalTitleContentSpacing}>
           <center>
             <hr className="w-[35%] rounded-full opacity-50" />
           </center>
-          <div className="text-white text-center font-light leading-6 text-2xl relative space-y-8">
+          <div className="text-white text-center font-light leading-6 text-lg md:text-2xl relative space-y-2 md:space-y-5">
             <div className="flex items-center justify-center relative">
               <span className="text-9xl opacity-20 absolute left-[10%] lg:left-[18%] transform -translate-x-full">
                 &ldquo;
               </span>
-              <p className="my-auto">
+              <p className="!leading-8">
                 Let’s create a world where everyone has equal access to
                 technology
               </p>
             </div>
             <div className="flex items-center justify-center relative">
-              <p className="my-auto">
+              <p className="!leading-8">
                 and the digital skills required to succeed in the digital age.
               </p>
               <span className="text-9xl opacity-20 absolute right-[10%] lg:right-[18%] transform translate-x-full">
@@ -193,13 +198,14 @@ export function Home() {
       </div>
 
       <div className="bg-[#0C3457] py-[15vh] flex flex-col justify-center">
-        <div className={contentPaddingClass + " space-y-20"}>
+        <div className={carouselPaddingClass + " " + globalTitleContentSpacing}>
           <div className={sectionTitleClass + " text-white"}>Our Programs</div>
           <Carousel
             items={programsJson}
             ItemTemplate={({ item }) => programProfileCard(item)}
             autoMove={false}
-            numVisibleItems={3}
+            numVisibleItems={isSmallScreen ? 1 : 3}
+            isSmallScreen={isSmallScreen}
           />
         </div>
       </div>
@@ -219,7 +225,7 @@ export function Home() {
             }
           >
             <div>10+</div>
-            <div className="text-base">Programs</div>
+            <div className="text-xs md:text-base">Programs</div>
           </div>
 
           <div
@@ -228,7 +234,7 @@ export function Home() {
             }
           >
             <div>10+</div>
-            <div className="text-base">Programs</div>
+            <div className="text-xs md:text-base">Programs</div>
           </div>
 
           <div
@@ -237,17 +243,17 @@ export function Home() {
             }
           >
             <div>10+</div>
-            <div className="text-base">Programs</div>
+            <div className="text-xs md:text-base">Programs</div>
           </div>
         </div>
       </div>
 
       <div className="bg-white py-[15vh] flex flex-col justify-center">
-        <div className={contentPaddingClass + " space-y-20"}>
+        <div className={carouselPaddingClass + " " + globalTitleContentSpacing}>
           <div className={sectionTitleClass + " text-[#0C3457]"}>
             Testimonials
           </div>
-          <TestimonialCarousel items={testimonialJson} />
+          <TestimonialCarousel items={testimonialJson} isSmallScreen={isSmallScreen} />
         </div>
       </div>
 
@@ -255,27 +261,28 @@ export function Home() {
         className="bg-[#A5BDD1] py-[15vh] flex flex-col justify-center"
         id="team"
       >
-        <div className={contentPaddingClass + " space-y-20"}>
+        <div className={contentPaddingClass + " " + globalTitleContentSpacing}>
           <div className={sectionTitleClass + " text-[#0C3457]"}>Our Team</div>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-10">
             {teamJson.map((profile: ProfileProps) => teamProfileCard(profile))}
           </div>
         </div>
       </div>
 
       <div className="bg-white pt-[10vh] pb-[5vh] flex flex-col justify-center">
-        <div className={contentPaddingClass + " space-y-20"}>
+        <div className={contentPaddingClass + " " + globalTitleContentSpacing}>
           <div
             className={sectionTitleClass + " flex justify-center text-[#0C3457"}
           >
             Our Partners
           </div>
-          <div className="grid grid-cols-6 gap-12 gap-y-24 text-justify">
+          <div className="grid grid-cols-3 md:grid-cols-6 gap-12 gap-y-24 text-justify">
             <Carousel
               items={partnersJson}
               ItemTemplate={({ item }) => partnerOrganizationIcon(item)}
               autoMove={true}
-              numVisibleItems={6}
+              numVisibleItems={isSmallScreen ? 3 : 6}
+              isSmallScreen={isSmallScreen}
             />
           </div>
         </div>

@@ -1,4 +1,5 @@
-export const contentPaddingClass = "px-[5vh] md:px-[10vh] xl:px-[20vh]";
+export const contentPaddingClass = "px-[10vw] md:px-[10vh] xl:px-[20vh]";
+export const carouselPaddingClass = "px-[2vw] md:px-[10vh] xl:px-[20vh]";
 
 export function handleNavLinkClick(hash: string) {
   window.location.hash = hash;
