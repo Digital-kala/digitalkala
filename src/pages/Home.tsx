@@ -27,6 +27,7 @@ import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 import participantsImage from "../assets/image/background/participants.jpg";
 
+
 const globalTitleContentSpacing = "space-y-10 md:space-y-14";
 const hookTitleClass =
   "font-bold text-5xl font-['WebsiteFontBold'] leading-[4rem]";

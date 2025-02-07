@@ -12,9 +12,11 @@
 @layer components {
   .text-2xs {
     font-size: 0.65rem;
+    line-height: 0.75rem /* 12px */;
   }
   .text-3xs {
     font-size: 0.55rem;
+    line-height: 0.65rem /* 12px */;
   }
 }
 
@@ -62,7 +64,6 @@ p{
   line-height: 1.25rem;
 }
 
-
 .hoverFloat {
   transition: transform 0.2s ease-out;
 }
@@ -84,11 +85,6 @@ p{
   /* Internet Explorer/Edge */
   user-select: none;
   /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
-}
-
-#text-2xs {
-  font-size: 0.625rem /* 10px */;
-  line-height: 0.75rem /* 12px */;
 }
 
 /* lineup class and keyframes */

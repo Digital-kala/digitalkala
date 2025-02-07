@@ -2,39 +2,36 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createHashRouter, RouterProvider } from "react-router-dom";
 
-import './index.css';
-
-
 import { PrimeReactProvider } from "primereact/api";
 import Tailwind from "primereact/passthrough/tailwind";
 
 import {Home, WorkInProgress } from './pages';
+import './index.css';
 
-// Set up router and route configurations
-const router = createHashRouter([
-  {
-    path: "/home",
+
+// Configure and create a router with specific routes
+const routes = [
+  { path: "*", element: <WorkInProgress /> },
+  { path: "/home", element: <Home /> }
+];
+
+const router = createHashRouter(
+  routes.map(route => ({
+    ...route,
     element: (
       <PrimeReactProvider value={{ unstyled: true, pt: Tailwind }}>
-        <Home />
+        {route.element}
       </PrimeReactProvider>
-    ),
-  },
-  // Catch-all route and redirect to this path for now
-  {
-    path: "*",
-    element: (
-      <PrimeReactProvider value={{ unstyled: true, pt: Tailwind }}>
-        <WorkInProgress />
-      </PrimeReactProvider>
-    ),
-  },
-]);
-
-// Render the application to the DOM
-const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
+    )
+  }))
 );
+
+// Set the default theme
+localStorage.setItem('theme', 'light');
+
+// Render the application
+const rootElement = document.getElementById('root');
+const root = ReactDOM.createRoot(rootElement as HTMLElement);
 root.render(
   <React.StrictMode>
     <RouterProvider router={router} />
